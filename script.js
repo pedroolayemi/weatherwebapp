@@ -9,7 +9,7 @@ const API_KEY = "05bce444e01cfa1076efb053162dad07";
 const createWeatherCard = (cityName, weatherItem, index) => {
     if(index === 0) { // HTML for the main weather card
         return `<div class="details">
-                    <h2>${cityName} (${weatherItem.dt_txt.split(" ")[0]})</h2>
+                    <h2>${cityName}<span class="current-date"> (${weatherItem.dt_txt.split(" ")[0]})</span></h2>
                     <h6>Temperature: ${(weatherItem.main.temp - 273.15).toFixed(2)}°C</h6>
                     <h6>Wind: ${weatherItem.wind.speed} M/S</h6>
                     <h6>Humidity: ${weatherItem.main.humidity}%</h6>
@@ -106,7 +106,7 @@ function updateDateTime() {
     const date = now.toDateString();
 
     const timeDateDiv = document.querySelector('.time-date');
-    timeDateDiv.textContent = `${hours}:${minutes}:${seconds} - ${date}`;
+    timeDateDiv.innerHTML = `${hours}:${minutes}:${seconds}  <div class ="date-div"></div> ${date}`;
 }
 
 
