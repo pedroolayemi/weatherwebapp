@@ -8,7 +8,7 @@
 
 body{
     background: #263849;
-    background-image: url("/weatherimg.jpeg");
+    background-image: url("weatherimg.jpeg");
 }
 
 
